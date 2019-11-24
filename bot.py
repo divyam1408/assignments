@@ -1,12 +1,13 @@
-# Work with Python 3.6
+# Prequistes
+#install beautifulsoup4 and google on the system
+# using pip install beautifulsoup4 , pip install google
 import discord
 from googlesearch import search
 from os import path
-from collections import defaultdict
 import json
 
-TOKEN = 'NjQ3Nzg2ODk5OTIyMjIzMTQ1.XdmI5Q.EwQCeRscY4AkrKrHoUsb44-ciZw'
-GUILD = 'live_bird'
+TOKEN = 'NjQ3Nzg2ODk5OTIyMjIzMTQ1.Xdpt6Q.5cS6m_pRUT6HrKnhz9UygeflPno' #bot token
+GUILD = 'divyam'
 
 
 
@@ -16,14 +17,13 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    for guild in client.guilds:
-        if(guild.name == GUILD):
-            break
-    print(f'{client.user} has connected to following gluid:\n'
-            f'{guild.name}(id:{guild.id} )')
+    # for guild in client.guilds:
+    #     if(guild.name == GUILD):
+    #         break
+    print(f'{client.user} has been connected to your gluid\n')
 
-    members = '\n - '.join([member.name for member in guild.members])
-    print(f'Guild Members:\n - {members}')
+    # members = '\n - '.join([member.name for member in guild.members])
+    # print(f'Guild Members:\n - {members}')
 
     if(path.exists('user_search_history.txt') == False):
         data = {}
